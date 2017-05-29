@@ -1,0 +1,10 @@
+#!/bin/basic
+10 REM BASIC script test
+20 REM 1. Ask for name
+30 INPUT "Who are you? " $name
+40 REM 2. Warm salutations
+48 PRINT
+50 PRINT "Hello $name"
+60 REM 3. So shy
+68 PRINT
+70 PRINT "See you"

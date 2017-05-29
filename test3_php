@@ -1,0 +1,15 @@
+#!/usr/bin/php
+<? // PHP script test
+////////////////////////////
+// 1. Ask for name
+echo "Who are you? ";
+$handle = fopen('php://stdin','r');
+// 2. Warm salutions
+printf("\nHello %s", fgets($handle)); // 2.1. say hello
+fclose($handle);
+printf("\nI am %s\n", exec('uname -n')); // 2.2 introduce yourself
+$today = getdate();
+printf("\nToday is %02d/%02d/%04d\n", $today['mon'], $today['mday'], $today['year']); // 2.3 a memorable day
+// 3 So shy
+sleep(15); // 3.1 nothing to say...
+printf("\nSee you\n") ; // 3.2 say goodbye
