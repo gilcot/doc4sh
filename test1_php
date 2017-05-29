@@ -1,0 +1,16 @@
+#!/usr/bin/php
+<? # PHP script test
+##############
+# 1. Ask for name
+echo "Who are you? ";
+$handle = fopen('php://stdin','r');
+$name = fgets($handle);
+fclose($handle);
+# 2. Warm salutions
+echo "\nHello $name"; # 2.1. say hello
+echo "\nI am ". exec('uname -n') . "\n"; # 2.2 introduce yourself
+$today = getdate();
+echo "\nToday is $today[mon]/$today[mday]/$today[year]\n"; # 2.3 a memorable day
+# 3 So shy
+sleep(15); # 3.1 nothing to say...
+echo "\nSee you\n"; # 3.2 say goodbye

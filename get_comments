@@ -1,10 +1,11 @@
 #!/bin/sh
 
 # readable file requiered
-grep -q "" "$1" || exit 1
+: ${1:?Please provide a file path}
+cat "$1" 1>/dev/null || exit 1
 
 # check first line
-head -n 1 "$1" | grep -q '^#!/s\?bin/[a-z]*sh$' || exit 2
+head -n 1 "$1" | grep -q '^#!/\(usr\(/local\)\{0,1\}/\)\{0,1\}s\{0,1\}bin/[a-zA-Z0-9]\{1,\}$' || { echo "script without shebang"; exit 2; }
 
 # extract comments 
 grep -o '#.*$' "$1" | cut -c 2- 

@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+# PERL script test
+############################
+use strict;
+use warnings;
+# 1. Ask for name
+print "Who are you? ";
+my $name = <STDIN>;
+chomp $name;
+# 2. Warm salutions
+printf("\nHello %s\n", $name); # 2.1. say hello
+printf("\nI am %s\n", `uname -n`) ; # 2.2 introduce yourself
+use Time::Piece;
+printf("\nToday is %s\n", localtime->mdy); # 2.3 a memorable day
+# 3 So shy
+sleep 15; # 3.1 nothing to say...
+print "See you"; # 3.2 say goodbye
