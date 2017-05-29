@@ -6,6 +6,8 @@ This a collection of scripts that could be a Ghist each.
 
 During my _Unix_ course, this is one of the exercice I ask my students in
 in order to start playing with `grep`: 
-"Using only grep, write a script that will extract from a given shell script,
-after checking the file argument, all comments that start at firsh column."
+"Write a script that will extract comment from a shell script. But make it
+fail when the script is called with no argument, and also when the script
+file cannot be found or read. Try to use only grep and keep your script the
+smallest possible."
 

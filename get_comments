@@ -3,6 +3,9 @@
 # readable file requiered
 grep -q "" "$1" || exit 1
 
+# check first line
+head -n 1 "$1" | grep -q '^#!/s\?bin/[a-z]*sh$' || exit 2
+
 # extract comments 
-grep '^#' "$1" | cut -c 2- 
+grep -o '#.*$' "$1" | cut -c 2- 
 
