@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# readable file requiered
+grep -q "" "$1" || exit 1
+
+# extract comments 
+grep '^#' "$1" | cut -c 2- 
+

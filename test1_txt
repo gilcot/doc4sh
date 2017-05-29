@@ -1,0 +1,4 @@
+make this text file readable by everyone
+> chmod 0664 test1_txt
+but it should have any hash sign somewhere
+> sed -i '/#/d' test1_txt

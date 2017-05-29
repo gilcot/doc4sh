@@ -1,0 +1,13 @@
+#!/bin/sh
+# Shell script test
+############################
+# 1. Ask for name
+printf "Who are you? " # 1.1 print question
+read name # 1.2 read answer
+# 2. Warm salutions
+printf "\nHello %s\n" "$name" # 2.1. say hello
+printf "\nI am %s\n" "$(uname -n)" # 2.2 introduce yourself
+printf "\nToday is %s\n\n" "$(date +%D)" # 2.3 a memorable day
+# 3 So shy
+sleep 15 # 3.1 nothing to say...
+echo See you # 3.2 say goodbye

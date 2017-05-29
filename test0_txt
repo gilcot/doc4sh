@@ -1,0 +1,5 @@
+make this file unreadable to all,
+but writable by user and it's group
+(so one can echo test into it...)
+> chmod 0220 test0_txt
+
