@@ -5,7 +5,7 @@
 print "Who are you? "
 name = STDIN.gets.chomp
 # 2. Warm salutions
-puts "\nHello " + name # 2.1. say hello
+puts "\nHello " + name # 2.1 say hello
 
 puts "\nI am " + `uname -n` # 2.2 introduce yourself
 today = Time.now

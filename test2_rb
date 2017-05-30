@@ -1,0 +1,25 @@
+#!/usr/bin/ruby
+=begin
+Ruby script test
+------------------------
+=end
+
+=begin
+1. Ask for name
+=end
+print "Who are you? "
+name= STDIN.gets.chomp
+
+=begin
+2. Warm salutations
+=end
+puts "\nHello " + name # 2.1 say hello
+puts "\nI am " + `uname -n` # 2.2 Introduce yourself
+today = Time.now
+puts "\nToday is " + today.month.to_s + '/' + today.day.to_s + '/' + today.year.to_s # 2.3 a memorable day
+
+=begin
+3. So shy
+=end
+sleep 15 # 3.1 nothing to say...
+puts "\nSee you" # 3.2 say goodbye

@@ -11,14 +11,14 @@ $handle = fopen('php://stdin','r');
 /*
 2. Warm salutions
  */
-echo "\nHello ". fgets($handle)) . "\n" ; /* 2.1. say hello */
+echo "\nHello ". fgets($handle)) . "\n" ; /* 2.1 say hello */
 fclose($handle);
 echo "\nI am " . exec('uname -n') . "\n" ; /* 2.2 introduce yourself */
 $today = getdate();
 echo "\nToday is $today[mon]/$today[mday]/$today[year]\n" ; /* 2.3 a memorable day */
 
 /*
-3 So shy
+3. So shy
  */
 sleep(15); /* 3.1 nothing to say... */
 echo "\nSee you\n" ; /* 3.2 say goodbye */

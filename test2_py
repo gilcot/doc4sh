@@ -1,0 +1,25 @@
+#!/usr/bin/python
+"""
+Python script test
+------------------------
+"""
+
+"""
+1. Ask for name
+"""
+name = str(raw_input("who are you? "))
+
+"""
+2. Warm salutations
+"""
+print("\nHello " + name + "\n") # 2.1 says hello
+import subprocess
+prin("\nI am " + subprocess.check_output('uname -n', shell=True)) # 2.2 introduce yourself
+import time
+print("\nToday is " + time.strftime('%m/%d/%y')) # 2.3 a memorable day
+
+"""
+3. So shy
+"""
+time.sleep(15) # 3.1 nothing to say
+print("See you") # 3.2 say goodbye

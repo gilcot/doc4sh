@@ -4,7 +4,7 @@
 # 1. Ask for name
 name = str(raw_input("Who are you? "))
 # 2. Warm salutions
-print("\nHello " + name +"\n") # 2.1. say hello
+print("\nHello " + name +"\n") # 2.1 say hello
 import subprocess
 print("I am " + subprocess.check_output('uname -n', shell=True)) # 2.2 introduce yourself
 import time

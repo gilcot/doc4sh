@@ -2,20 +2,15 @@
 
 # readable file requiered
 : ${1:?Please provide a file path}
-cat "$1" 1>/dev/null || exit 1
+sed 'p' "$1" 1>/dev/null || exit 1
 
 # check first line
-head -n 1 "$1" | grep -q '^#!/' || { echo "script without shebang"; exit 2; }
+sed -n '1p' "$1" | grep -q '^#!/' || { echo "script without shebang"; exit 2; }
 
-# separator
-echo "${2:-#}" | grep -qv '/' && _s='/' \
-	|| echo "$2" | grep -qv '#' && _s='#' \
-	|| echo "$2" | grep -qv '+' && _s='+' \
-	|| echo "$2" | grep -qv '%' && _s='%' \
-	|| echo "$2" | grep -qv '!' && _s='!' \
-	|| echo "$2" | grep -qv '~' && _s='~'
+# handle slash
+echo "$2" | grep -q '/' && _f=$( echo "$2" | sed 's#/#\\/#g' ) || _f="${2:-#}"
+echo "$3" | grep -q '/' && _t=$( echo "$3" | sed 's#/#\\/#g' ) || _t="${3:-$}"
 
 # extract comments 
-##grep -o "${2:-#}.*${3:-$}" "$1" | sed "s${_s}^${2:-#}\\|${3:-  }\$${_s}${_s}g"
-grep -o "${2:-#}.*${3:-$}" "$1" | sed "s$_s^${2:-#}$_s$_s" | sed "s$_s${3:-  }\$$_s$_s"
+sed -n "/${_f}/,/${_t}/p" "$1" | sed "s/^.*${_f}//" | sed "s/${_t}\$//"
 

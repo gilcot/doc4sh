@@ -8,7 +8,7 @@ print "Who are you? ";
 my $name = <STDIN>;
 chomp $name;
 # 2. Warm salutions
-printf("\nHello %s\n", $name); # 2.1. say hello
+printf("\nHello %s\n", $name); # 2.1 say hello
 printf("\nI am %s\n", `uname -n`) ; # 2.2 introduce yourself
 use Time::Piece;
 printf("\nToday is %s\n", localtime->mdy); # 2.3 a memorable day
