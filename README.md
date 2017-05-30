@@ -22,4 +22,6 @@ Finally, completely relax the check, so that it can accept something like
 `#!/bin/env somename` and others."
 4. "Finally, let user indicate, optionally, the beginning and the ending of
 comments. So the script may extract bloc comments from PHP and others."
+5. "Let's reload the script using `sed` anywhere possible. Now notice that
+it works for Ruby or Python multilines comments. Yeah"
 
