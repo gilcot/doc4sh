@@ -7,9 +7,15 @@ cat "$1" 1>/dev/null || exit 1
 # check first line
 head -n 1 "$1" | grep -q '^#!/' || { echo "script without shebang"; exit 2; }
 
-# get length of regexp
-l=$( grep -o "${2:-#}" "$1" | sort -gu | tail -n 1 )
+# separator
+echo "${2:-#}" | grep -qv '/' && _s='/' \
+	|| echo "$2" | grep -qv '#' && _s='#' \
+	|| echo "$2" | grep -qv '+' && _s='+' \
+	|| echo "$2" | grep -qv '%' && _s='%' \
+	|| echo "$2" | grep -qv '!' && _s='!' \
+	|| echo "$2" | grep -qv '~' && _s='~'
 
 # extract comments 
-grep -o "${2:-#}.*$" "$1" | cut -c $(( ${#l} + 1 ))- 
+##grep -o "${2:-#}.*${3:-$}" "$1" | sed "s${_s}^${2:-#}\\|${3:-  }\$${_s}${_s}g"
+grep -o "${2:-#}.*${3:-$}" "$1" | sed "s$_s^${2:-#}$_s$_s" | sed "s$_s${3:-  }\$$_s$_s"
 

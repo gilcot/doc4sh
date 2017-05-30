@@ -5,7 +5,7 @@ This a collection of scripts that could be a Ghist each.
 ## `get_comments`
 
 During my _Unix_ course, this is one of the exercice I ask my students in
-in order to start playing with learned concepts and commands: 
+order to start playing with learned concepts and commands: 
 1. "Write a script that will extract comment from a shell script. But make 
 it fail when the script is called with no argument, and also when the script
 file cannot be found or read, or doesn't contain shebang. Try to use only
@@ -20,4 +20,6 @@ non-shell scripts too, and test with an unstrurtured BASIC file for example
 Be aware that delimiter lenght may change... (`'[0-9]* REM '` vs `'# '` ...)
 Finally, completely relax the check, so that it can accept something like
 `#!/bin/env somename` and others."
+4. "Finally, let user indicate, optionally, the beginning and the ending of
+comments. So the script may extract bloc comments from PHP and others."
 
